@@ -8,7 +8,9 @@
 URL="https://gitee.com/horrypure/better-cloudflare-ip/raw/master/gost-linux-amd64-2.11.1.gz"
 rm -rf /usr/bin/gost
 wget -O - $URL | gzip -d > /usr/bin/gost && chmod +x /usr/bin/gost
-
+chmod +x /usr/bin/gost
+chmod +x /usr/bin/gost
+chmod +x /usr/bin/gost
 cat <<EOF > /etc/systemd/system/gost.service
 [Unit]
 Description=gost
