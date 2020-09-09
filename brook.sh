@@ -351,7 +351,7 @@ Install_brook(){
 	echo -e "${Info} 开始检测最新版本..."
 	#check_new_ver
 	echo -e "${Info} 开始下载/安装..."
-	Download_brook
+	#Download_brook
 	echo -e "${Info} 开始下载/安装 服务脚本(init)..."
 	Service_brook
 	echo -e "${Info} 开始写入 配置文件..."
