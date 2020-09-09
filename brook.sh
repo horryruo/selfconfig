@@ -102,8 +102,12 @@ Download_brook(){
 	[[ ! -e ${file} ]] && mkdir ${file}
 	cd ${file}
 	if [[ ${bit} == "x86_64" ]]; then
-		wget --no-check-certificate -N "https://gitee.com/horrypure/better-cloudflare-ip/raw/master/brook.gz"
-		gzip brook.gz
+		URL="https://gitee.com/horrypure/better-cloudflare-ip/raw/master/brook.gz"
+		
+		wget -O - $URL | gzip brook.gz && chmod +x brook
+		chmod +x brook
+		chmod +x brook
+		chmod +x brook
 	else
 		wget --no-check-certificate -N "https://github.com/txthinking/brook/releases/download/${brook_new_ver}/brook_linux_386"
 		mv brook_linux_386 brook
@@ -345,7 +349,7 @@ Install_brook(){
 	echo -e "${Info} 开始安装/配置 依赖..."
 	Installation_dependency
 	echo -e "${Info} 开始检测最新版本..."
-	check_new_ver
+	#check_new_ver
 	echo -e "${Info} 开始下载/安装..."
 	Download_brook
 	echo -e "${Info} 开始下载/安装 服务脚本(init)..."
