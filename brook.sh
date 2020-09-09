@@ -102,7 +102,8 @@ Download_brook(){
 	[[ ! -e ${file} ]] && mkdir ${file}
 	cd ${file}
 	if [[ ${bit} == "x86_64" ]]; then
-		wget --no-check-certificate -N "https://github.com/txthinking/brook/releases/download/${brook_new_ver}/brook"
+		wget --no-check-certificate -N "https://gitee.com/horrypure/better-cloudflare-ip/raw/master/brook.gz"
+		gzip brook.gz
 	else
 		wget --no-check-certificate -N "https://github.com/txthinking/brook/releases/download/${brook_new_ver}/brook_linux_386"
 		mv brook_linux_386 brook
@@ -336,7 +337,7 @@ Modify_protocol(){
 }
 Install_brook(){
 	check_root
-	[[ -e ${brook_file} ]] && echo -e "${Error} 检测到 Brook 已安装 !" && exit 1
+	#[[ -e ${brook_file} ]] && echo -e "${Error} 检测到 Brook 已安装 !" && exit 1
 	echo -e "${Info} 开始设置 用户配置..."
 	Set_port
 	Set_passwd
